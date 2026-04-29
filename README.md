@@ -1,125 +1,56 @@
-# Moodboard_WhimsyWall
-A whimsical, pastel-themed moodboard app for creating, organising, and sharing visual ideas.
-
 # WhimsyWall
 
-A dreamy moodboard tool that helps you turn inspiration into real creative output.
+A creative web application built with React and TypeScript.
 
----
+## Getting Started
 
-## Live Idea
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-Whimsy Wall is built around one simple flow:
+### Installation
 
-Inspiration → Creation → Output
+1. Navigate to the project directory:
+```bash
+cd D:\WhimsyWall
+```
 
-Most tools stop at collecting ideas.
-Whimsy Wall helps you actually create something from them.
+2. Install dependencies:
+```bash
+npm install
+```
 
----
+### Development
 
-## Features
+To start the development server:
+```bash
+npm start
+```
 
-### Create Moodboards
+The application will open in your browser at `http://localhost:3000`
 
-* Whiteboard and corkboard styles
-* Soft pastel background customization
-* Multiple boards per user
+### Building
 
-### Visual Editor
+To build for production:
+```bash
+npm build
+```
 
-* Upload images
-* Paste screenshots directly
-* Drag, resize, and arrange freely
-* Add text with curated fonts
-* Layer control for elements
+## Project Structure
 
-### Editing Experience
-
-* Copy, cut, paste, delete
-* Undo and redo
-* Auto-save
-
-### Inspired Output
-
-* Upload what you created from a board
-* Add notes to explain your process
-* Show full creative journey
-
-### Social Layer
-
-* Public and private boards
-* Explore public moodboards
-* Share boards with a link
-* Export as image
-
----
-
-## Design Language
-
-* Soft pastel palette
-* Calm, scrapbook-style UI
-* Rounded edges and light shadows
-* Smooth interactions
-
----
-
-## Tech Stack (Planned)
-
-* Frontend: React / Next.js
-* Canvas: Fabric.js or Konva
-* Storage: S3-compatible storage
-* Backend: Node.js or Django
-* Data: JSON-based canvas state
-
----
-
-## Project Status
-
-Early development
-
----
-
-## Screenshots
-
-Coming soon
-
----
-
-## Documentation
-
-Full product requirements:
-[moodboard_tool_requirements.pdf](./moodboard_tool_requirements.pdf)
-
----
-
-## Roadmap
-
-* Core editor
-* Editing tools
-* Accounts and profiles
-* Public discovery
-* Inspired output system
-* Sharing and export
-* Advanced features
-
----
-
-## Why This Exists
-
-Most moodboard tools help you collect ideas.
-
-Whimsy Wall helps you actually do something with them.
-
----
-
-## Contributing
-
-Not open yet. Will be available soon.
-
----
+```
+WhimsyWall/
+├── public/           # Static files
+├── src/              # React components and styles
+│   ├── App.tsx      # Main App component
+│   ├── App.css      # App styles
+│   ├── index.tsx    # Entry point
+│   └── index.css    # Global styles
+├── package.json     # Project dependencies
+├── tsconfig.json    # TypeScript configuration
+└── README.md        # This file
+```
 
 ## License
 
-To be decided
-
+MIT

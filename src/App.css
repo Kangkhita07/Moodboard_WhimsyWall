@@ -1,0 +1,203 @@
+/* ========================================
+   App Container - Main Layout
+   ======================================== */
+
+@font-face {
+  font-family: 'Embolism Spark';
+  src: url('./assets/fonts/Embolism Spark.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffd9f4 0%, #fff5f9 50%, #e0f4f7 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================================
+   Hero Section - Top Part
+   ======================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+/* Title Styling */
+.hero-title {
+  font-family: 'Embolism Spark', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  color: #6b5b73;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.3);
+}
+
+.title-animation {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 18px;
+}
+
+.animation-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  object-fit: contain;
+  opacity: 0;
+  animation: rotateAssetFrames 1.2s steps(1, end) infinite;
+  animation-delay: calc(var(--frame-index) * 0.15s);
+}
+
+@keyframes rotateAssetFrames {
+  0%,
+  12.49% {
+    opacity: 1;
+  }
+
+  12.5%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Subtitle Styling */
+.hero-subtitle {
+  position: relative;
+  width: min(680px, 92vw);
+  min-height: 38px;
+  margin: 0 auto 40px;
+  font-size: 24px;
+  color: #a89aaa;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.subtitle-idea {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: cycleSubtitleIdeas 18s ease-in-out infinite;
+  animation-delay: calc(var(--idea-index) * 3s);
+}
+
+@keyframes cycleSubtitleIdeas {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  14% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Start Button Styling */
+.start-button {
+  padding: 16px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ffb3d9 0%, #ffa6c9 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 163, 201, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.start-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 163, 201, 0.5);
+}
+
+.start-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 163, 201, 0.4);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .hero-section {
+    padding: 30px 20px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .title-animation {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    min-height: 56px;
+    margin-bottom: 30px;
+  }
+
+  .start-button {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .title-animation {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    min-height: 68px;
+    margin-bottom: 25px;
+  }
+
+  .start-button {
+    padding: 12px 35px;
+    font-size: 16px;
+  }
+}
