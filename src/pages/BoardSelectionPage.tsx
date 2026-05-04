@@ -1,17 +1,13 @@
 import corkBoardImage from '../../Animation asset/corkboard.png';
 import whiteBoardImage from '../../Animation asset/whiteboard.png';
-
-type BoardType = 'cork' | 'white';
+import type { BoardType } from '../App';
 
 type BoardSelectionPageProps = {
   onBack: () => void;
+  onSelect: (board: BoardType) => void;
 };
 
-function BoardSelectionPage({ onBack }: BoardSelectionPageProps) {
-  const handleBoardSelect = (board: BoardType) => {
-    console.log(`Selected board: ${board}`);
-  };
-
+function BoardSelectionPage({ onBack, onSelect }: BoardSelectionPageProps) {
   const boardCards: Array<{
     id: BoardType;
     title: string;
@@ -72,7 +68,7 @@ function BoardSelectionPage({ onBack }: BoardSelectionPageProps) {
             <button
               key={board.id}
               type="button"
-              onClick={() => handleBoardSelect(board.id)}
+              onClick={() => onSelect(board.id)}
               className="group flex h-full flex-col items-center rounded-2xl bg-white/55 p-4 transition duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_0_34px_rgba(255,153,211,0.58),0_18px_38px_rgba(126,104,146,0.16)] focus:outline-none focus:ring-4 focus:ring-white/80"
             >
               <img
